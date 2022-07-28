@@ -22,6 +22,7 @@ const feedbackSignup = document.querySelector("#feedback-signup");
 const feedbackConfirm = document.querySelector("#confirm-feedback");
 const firstNameValid = document.querySelector("#name-valid");
 const lastNameValid = document.querySelector("#last-valid");
+const checkIn = document.querySelector('#checkin')
 
 // invalid.style.display = "none";
 
@@ -94,42 +95,49 @@ function signupInputs() {
   }
 }
 
-btnSignup.addEventListener("click", function () {
-  event.preventDefault();
-  signupInputs();
+// btnSignup.addEventListener("click", function () {
+//   event.preventDefault();
+//   signupInputs();
 
-  localStorage.setItem(signupPassword, JSON.stringify(signupPassword))
-  localStorage.setItem(signupEmail, JSON.stringify(signupEmail))
-
-  login.style.display = "block";
-  signupForm.style.display = "none";
-});
-
-btnLogin.addEventListener("click", function () {
-  event.preventDefault();
-  ValidateInput();
-
-  if(!localStorage === signupEmail ) {
-    console.log('put your email');
-  } else {
-    console.log('done');
-  }
-
-  if(!localStorage === signupPassword) {
-    console.log('wrong pin');
-  } else {
-    console.log('password set');
-  }
-
-  localStorage.getItem(signupPassword)
-  localStorage.getItem(signupEmail)
-});
+// if(email.value === ''){
+//   alert('Please fill in the form')
+// } else {
+//   login.style.display = "block";
+//   signupForm.style.display = "none";
+// }
 
 
+//   localStorage.setItem(signupPassword, signupEmail)
 
-signupForm.style.display = "none";
+//   // login.style.display = "block";
+//   // signupForm.style.display = "none";
+// });
 
-signup.addEventListener("click", function () {
-  signupForm.style.display = "block";
-  login.style.display = "none";
-});
+// btnLogin.addEventListener("click", function () {
+//   event.preventDefault();
+//   ValidateInput();
+
+//   if(!localStorage === signupEmail ) {
+//     console.log('put your email');
+//   } else {
+//     console.log('done');
+//   }
+
+//   if(!localStorage === signupPassword) {
+//     console.log('wrong pin');
+//   } else {
+//     console.log('password set');
+//   }
+
+//   localStorage.getItem(signupPassword)
+//   localStorage.getItem(signupEmail)
+// });
+
+
+
+// signupForm.style.display = "none";
+
+// signup.addEventListener("click", function () {
+//   signupForm.style.display = "block";
+//   login.style.display = "none";
+// });
