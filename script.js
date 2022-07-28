@@ -1,3 +1,5 @@
+'use stirct';
+
 const email = document.querySelector("#email");
 const invalid = document.querySelector("#invalid");
 const password = document.querySelector("#password");
@@ -18,9 +20,8 @@ const btnSignup = document.querySelector("#btn-signup");
 const invalidSignup = document.querySelector("#invalid-signup");
 const feedbackSignup = document.querySelector("#feedback-signup");
 const feedbackConfirm = document.querySelector("#confirm-feedback");
-
-signupForm.style.display = "block";
-login.style.display = "none";
+const firstNameValid = document.querySelector("#name-valid");
+const lastNameValid = document.querySelector("#last-valid");
 
 // invalid.style.display = "none";
 
@@ -31,29 +32,20 @@ function ValidateInput() {
     return re.test(String(email).toLowerCase());
   };
 
-  // const validName = (firstName, lastName) => {
-  //   const name = /^[a-zA-Z]+ [a-zA-Z]+$/;
-  //   return name.test(String(firstName, lastName).toLowerCase());
-  // };
-
   //Assigning input values
 
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
 
   if (emailValue === "") {
-    console.log("invalid");
     invalid.style.display = "block";
   } else if (!isValid(emailValue)) {
-    console.log("Validate");
     invalid.style.display = "block";
   } else {
-    console.log("Valid");
     invalid.style.display = "none";
   }
 
   if (passwordValue === "") {
-    console.log("put password");
     feedback.style.display = "block";
   } else if (
     !passwordValue.match(/[a-z]/g) &&
@@ -62,18 +54,11 @@ function ValidateInput() {
     !passwordValue.match(/[^a-zA-Z\d]/g) &&
     !passwordValue.length >= 8
   ) {
-    console.log("add password");
     feedback.style.display = "block";
   } else {
-    console.log("strong password");
     feedback.style.display = "none";
   }
 }
-
-btnLogin.addEventListener("click", function () {
-  event.preventDefault();
-  ValidateInput();
-});
 
 function signupInputs() {
   const signupValid = (signupEmail) => {
@@ -82,8 +67,6 @@ function signupInputs() {
     return re.test(String(signupEmail).toLowerCase());
   };
 
-  // const firstNameValue = firstName.value.trim();
-  // const lastNameValue = lastName.value.trim();
   const signupPasswordValue = signupPassword.value.trim();
   const confirmPasswordValue = confirmPassword.value.trim();
   const signupEmailValue = signupEmail.value.trim();
@@ -93,7 +76,6 @@ function signupInputs() {
   } else if (!signupValid(signupEmailValue)) {
     invalidSignup.style.display = "block";
   } else {
-    console.log("valid");
     invalidSignup.style.display = "none";
   }
 
@@ -115,11 +97,39 @@ function signupInputs() {
 btnSignup.addEventListener("click", function () {
   event.preventDefault();
   signupInputs();
+
+  localStorage.setItem(signupPassword, JSON.stringify(signupPassword))
+  localStorage.setItem(signupEmail, JSON.stringify(signupEmail))
+
+  login.style.display = "block";
+  signupForm.style.display = "none";
 });
 
-// signupForm.style.display = "none";
+btnLogin.addEventListener("click", function () {
+  event.preventDefault();
+  ValidateInput();
 
-// signup.addEventListener("click", function () {
-//   signupForm.style.display = "block";
-//   login.style.display = "none";
-// });
+  if(!localStorage === signupEmail ) {
+    console.log('put your email');
+  } else {
+    console.log('done');
+  }
+
+  if(!localStorage === signupPassword) {
+    console.log('wrong pin');
+  } else {
+    console.log('password set');
+  }
+
+  localStorage.getItem(signupPassword)
+  localStorage.getItem(signupEmail)
+});
+
+
+
+signupForm.style.display = "none";
+
+signup.addEventListener("click", function () {
+  signupForm.style.display = "block";
+  login.style.display = "none";
+});
