@@ -24,10 +24,8 @@ close.onclick = function () {
     window.onclick = function (event) {
         if(event.target === modal){
         modal.style.display = 'none'
-    }
-
-    if(event.target === dropdownList) {
-        dropdownList.style.display = 'none'
+    } else if(event.target === patientDropdown) {
+      dropdownList.style.display = 'none'
     }
       }
 
