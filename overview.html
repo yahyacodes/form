@@ -51,7 +51,7 @@
         Appointments
     </button>
 
-    <button class="btn btn-light border-end" onclick="location.href='overview.html'">
+    <button class="btn btn-light border-end">
         <i class="bi bi-person-fill"></i>
         Check INs
     </button>
@@ -95,98 +95,123 @@
     </div>
    </nav>
 
-   <section id="section" >
-    <div class="row">
-        <div class="col ms-4 mt-3">
-            <h1 class="fs-5 fw-bold">Check INs (This Month)</h1>
+   <section>
+    <div class="sidebar bg-primary rounded mt-3 ms-3 " style="width: 300px;" >
+        <div class="text-center">
+    <p class="fs-5 fw-normal text-light" id="name-view">Ali Mohammed Jama</p>
+    <input type="time" name="time" id="time">
         </div>
+    <hr class="clear-fix w-100 text-light">
 
-        <div class="col d-flex flex-row-reverse mx-4 mt-3">
-    <div class="btn-group ">
-        <button class="bt btn-outline-primary">
-            <i class="bi bi-funnel-fill"></i>
-            Filter
-        </button>
-
-        <button class="bt btn-outline-primary">
-            <i class="bi bi-plus-lg"></i>
-            New Check INs
-        </button>
-
-        <button class="bt outline-primary">
-            <i class="bi bi-x-lg"></i>
-            Delete
-        </button>
-    </div>
-        </div>
-    </div>
-    <hr class="clearfix w-100">
-    
-    <p class="ms-3 fs-6">show 
-        <select name="select" id="show">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="100">100</option>
-        </select>
-         entries
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+        <i class="bi bi-exclamation-circle-fill"></i>
+         Overview
     </p>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">
-                <input type="checkbox" name="checkbox" id="table-box">
-            </th>
-            <th scope="col">Name</th>
-            <th scope="col">Phone Number</th>
-            <th scope="col">Status</th>
-            <th scope="col">Location</th>
-            <th scope="col">Recorded At</th>
-        </tr>
-        </thead>
-        <tbody id="name-list"></tbody>
-    </table>
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+        <i class="bi bi-chat-fill"></i>
+         Notes & Comments
+    </p>
 
-    <div class="modal" id="check-number" style="background: rgba(0, 0, 0, 0.35);">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Check In</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p>Phone Number</p>
-              <input type="search" id="search" class="form-control">
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-outline-primary" id="close">
-                <i class="bi bi-x-lg"></i>
-                Cancel
-              </button>
-    
-              <button class="btn btn-primary" id="check-in" >
-                <i class="bi bi-person-fill"></i>
-                Check In
-            </button> 
-            </div>
-          </div>
-        </div>
-      </div>
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+        <i class="bi bi-cash"></i>
+         Transaction Details & Balances
+    </p>
+
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+        <i class="bi bi-phone-fill"></i>
+         Services / Procedure
+    </p>
+
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+        <i class="bi bi-calendar3"></i>
+         Appointments
+    </p>
+
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+        <i class="bi bi-box-seam-fill"></i>
+         Prescriptions
+    </p>
+
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+        <i class="bi bi-stickies-fill"></i>
+         Lab Tests & Results
+    </p>
+
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+        <i class="bi bi-clock-history"></i>
+         Check-in History
+    </p>
+
+    </div>
    </section>
 
-   <footer class="page-footer bg-white font-small fixed-bottom">
-    <div class="container">
+   <section id="overview-section">
     <div class="row">
+        <div class="col ms-2 mt-2">
+            <h1 class="fs-4 fw-bold">Check IN</h1>
+        </div>
+
+        <div class="col d-flex flex-row-reverse mx-2 mt-2">
+            <button class="btn btn-outline-primary">
+            <i class="bi bi-check"></i>
+            Mark As Completed
+            </button>
+        </div>
+    </div>
+
+    <hr class="clear-fix w-100">
+
+    <div class="row">
+        <div class="col ms-2 mt-2">
+            <h1 class="fs-4 fw-bold">
+                <i class="bi bi-person-fill"></i>
+                Patient</h1>
+        </div>
+
+        <div class="col d-flex flex-row-reverse mx-2 mt-2">
+            <button class="btn btn-outline-primary">
+            <i class="bi bi-exclamation-circle-fill"></i>
+            Update Patient Info
+            </button>
+        </div>
+    </div>
+
+    <hr class="clear-fix w-100">
+
+    <div class="row bg-secondary bg-opacity-10 ms-2 mx-2 border-top border-bottom">
         <div class="col">
-        <p class="fw-bold mt-3">2022&copy;BiasharaSystem</p>
+            <div class="fw-bold">
+                Name
+            </div>
         </div>
 
-        <div class="col d-flex flex-row-reverse">
-            <p class="fw-bold mt-3">Contact Us</p>
+        <div class="col">
+            <div class="fw-bold">
+                Gender
+            </div>
         </div>
-    </div>
-    </div>
-   </footer>
 
+        <div class="col">
+            <div class="fw-bold">
+                Phone Number
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="fw-bold">
+                Email
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="fw-bold">
+                Address
+            </div>
+        </div>
+
+    </div>
+
+   </section>
   </body>
 </html>
