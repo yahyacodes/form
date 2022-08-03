@@ -122,14 +122,24 @@
     </div>
     <hr class="clearfix w-100">
     
-    <p class="ms-3 fs-6">show 
-        <select name="select" id="show">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="100">100</option>
-        </select>
-         entries
-    </p>
+    <div class="row">
+        <div class="col">
+
+            <p class="ms-3 fs-6">show 
+                <select name="select" id="show">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="100">100</option>
+                </select>
+                 entries
+            </p>
+
+        </div>
+
+        <div class="col d-flex flex-row-reverse">
+            <input type="search" name="search" id="search" class="form-control w-25 mx-2" placeholder="Search....">
+        </div>
+    </div>
 
     <table class="table table-striped">
         <thead>
@@ -155,8 +165,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <p>Phone Number</p>
-              <input type="search" id="search" class="form-control">
+              <p class="fw-bold">Phone Number</p>
+              <input type="search" id="search" class="form-control" placeholder="254712345678">
             </div>
             <div class="modal-footer">
               <button class="btn btn-outline-primary" id="close">

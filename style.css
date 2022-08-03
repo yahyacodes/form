@@ -43,3 +43,15 @@
     border-top: 2px solid rgba(0, 0, 255, 0.493);
     border-bottom: 2px solid gray;
 }
+
+#notes-section {
+    position: absolute;
+    top: 4.5rem;
+    left: 21rem;
+    width: 80%;
+    border-radius: 10px;
+    background-color: white;
+    height: 90%;
+    border-top: 2px solid rgba(0, 0, 255, 0.493);
+    border-bottom: 2px solid gray;
+}

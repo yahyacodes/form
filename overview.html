@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <script defer src="checkin.js"></script>
+    <script defer src="overview.js"></script>
     <title>Document</title>
   </head>
   <body class="bg-secondary bg-opacity-10">
@@ -96,49 +96,49 @@
    </nav>
 
    <section>
-    <div class="sidebar bg-primary rounded mt-3 ms-3 " style="width: 300px;" >
+    <div class="sidebar bg-primary rounded mt-3 ms-3 " style="width: 300px; height: 850px; cursor: pointer;" >
         <div class="text-center">
     <p class="fs-5 fw-normal text-light" id="name-view">Ali Mohammed Jama</p>
     <input type="time" name="time" id="time">
         </div>
     <hr class="clear-fix w-100 text-light">
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="overview">
         <i class="bi bi-exclamation-circle-fill"></i>
          Overview
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="notes">
         <i class="bi bi-chat-fill"></i>
          Notes & Comments
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="transaction">
         <i class="bi bi-cash"></i>
          Transaction Details & Balances
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="procedures">
         <i class="bi bi-phone-fill"></i>
          Services / Procedure
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="appointments">
         <i class="bi bi-calendar3"></i>
          Appointments
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="prescriptions">
         <i class="bi bi-box-seam-fill"></i>
          Prescriptions
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="lab-tests">
         <i class="bi bi-stickies-fill"></i>
          Lab Tests & Results
     </p>
 
-    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2">
+    <p class="fs-6 fw-bold ms-3 text-light border-bottom mb-2 mt-3" id="history">
         <i class="bi bi-clock-history"></i>
          Check-in History
     </p>
@@ -211,6 +211,123 @@
         </div>
 
     </div>
+    
+    <div class="row ms-2 mt-3">
+        <div class="col text-primary">
+            <div class="name">Mohamed Ali Aden</div>
+        </div>
+
+        <div class="col">
+            <div class="gender">Male</div>
+        </div>
+
+        <div class="col">
+            <div class="phone-number">254712345678</div>
+        </div>
+
+        <div class="col">
+            <div class="email">mohamedali@kasoko.com</div>
+        </div>
+
+        <div class="col">
+            <div class="address">Eastleigh</div>
+        </div>
+    </div>
+   </section>
+
+   <section id="notes-section">
+    <div class="row">
+        <div class="col ms-2 mt-2">
+            <h1 class="fs-4 fw-bold">Check IN</h1>
+        </div>
+
+        <div class="col d-flex flex-row-reverse mx-2 mt-2">
+            <button class="btn btn-outline-primary">
+            <i class="bi bi-check"></i>
+            Mark As Completed
+            </button>
+        </div>
+    </div>
+
+    <hr class="clear-fix w-100">
+
+    <div class="row">
+        <div class="col ms-2 mt-2">
+            <h1 class="fs-4 fw-bold">
+                <i class="bi bi-chat"></i>
+                Notes</h1>
+        </div>
+
+        <div class="col d-flex flex-row-reverse mx-2 mt-2">
+            <button class="btn btn-outline-primary" id="add-notes">
+            <i class="bi bi-plus"></i>
+            Add Notes
+            </button>
+        </div>
+    </div>
+
+    <hr class="clear-fix w-100">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Services Provider</th>
+            <th scope="col">Commenter</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody id="comment-list"></tbody>
+    </table>
+
+    <div class="modal" id="add-comment" style="background: rgba(0, 0, 0, 0.35);">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Note</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="serviceprovider">Service Provider</label>
+                <select class="form-control" placeholder="Select Service Provider" name="select" id="select-provider">
+                    <option value="Select Service Provider"></option>
+                    <option value="Mohammed">Mohammed</option>
+                    <option value="Ali">Ali</option>
+                    <option value="Yaceen">Yaceen</option>
+                </select>
+
+                <label for="serviceprovider">Service Location</label>
+                <select class="form-control" name="select" id="select-provider">
+                    <option value="Select Service Provider"></option>
+                    <option value="Mohammed">Mohammed</option>
+                    <option value="Ali">Ali</option>
+                    <option value="Yaceen">Yaceen</option>
+                </select>
+                
+                <label for="note">Note</label>
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-chat"></i>
+                    </span>
+                    <textarea name="" id="" cols="10" rows="2" class="form-control"></textarea>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline-primary" id="close">
+                <i class="bi bi-x-lg"></i>
+                Cancel
+              </button>
+    
+              <button class="btn btn-primary" id="check-in" >
+                <i class="bi bi-plus"></i>
+                Add
+            </button> 
+            </div>
+          </div>
+        </div>
+      </div>
+   
 
    </section>
   </body>
