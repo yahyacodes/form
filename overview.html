@@ -9,12 +9,12 @@
       href=	"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <script defer src="overview.js"></script>
     <title>Document</title>
   </head>
   <body class="bg-secondary bg-opacity-10">
-   <nav class="navbar navbar-expand-lg bg-white">
+   <nav class="navbar navbar-expand-lg bg-white" id="navbar">
     <a href="checkin.html" class="navbar-brand fw-normal text-primary ms-5">BiasharaSystem</a>
 
     <button class="btn btn-light navbar-toggler mx-5" data-bs-toggle="navbar" data-bs-target="navmenu">
@@ -95,8 +95,8 @@
     </div>
    </nav>
 
-   <section>
-    <div class="sidebar bg-primary rounded mt-3 ms-3 " style="width: 300px; height: 850px; cursor: pointer;" >
+   <section class="d-none d-sm-none d-md-none d-lg-block">
+    <div class="sidebar bg-primary rounded mt-3 ms-3 " id="sidebar" style="width: 300px; height: 510px; cursor: pointer;">
         <div class="text-center">
     <p class="fs-5 fw-normal text-light" id="name-view">Ali Mohammed Jama</p>
     <input type="time" name="time" id="time">
@@ -146,189 +146,38 @@
     </div>
    </section>
 
-   <section id="overview-section">
+   <section class="bg-white mt-2 ms-4 rounded" style="position: absolute; width: 1550px; left: 20rem;height: 510px; top: 4rem;" id="overview-section">
     <div class="row">
-        <div class="col ms-2 mt-2">
-            <h1 class="fs-4 fw-bold">Check IN</h1>
-        </div>
-
-        <div class="col d-flex flex-row-reverse mx-2 mt-2">
-            <button class="btn btn-outline-primary">
-            <i class="bi bi-check"></i>
-            Mark As Completed
-            </button>
-        </div>
-    </div>
-
-    <hr class="clear-fix w-100">
-
-    <div class="row">
-        <div class="col ms-2 mt-2">
-            <h1 class="fs-4 fw-bold">
+        <div class="col">
+            <p class="fs-5 fw-bold ms-2 mt-2">
                 <i class="bi bi-person-fill"></i>
-                Patient</h1>
+                Patient
+            </p>
         </div>
-
-        <div class="col d-flex flex-row-reverse mx-2 mt-2">
-            <button class="btn btn-outline-primary">
-            <i class="bi bi-exclamation-circle-fill"></i>
-            Update Patient Info
+        <div class="col d-flex flex-row-reverse">
+            <button class=" mx-2 mt-3 btn btn-outline-primary">
+                <i class="bi bi-check"></i>
+                Mark As Complete
             </button>
         </div>
     </div>
 
     <hr class="clear-fix w-100">
+</section>
 
-    <div class="row bg-secondary bg-opacity-10 ms-2 mx-2 border-top border-bottom">
-        <div class="col">
-            <div class="fw-bold">
-                Name
-            </div>
-        </div>
 
-        <div class="col">
-            <div class="fw-bold">
-                Gender
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="fw-bold">
-                Phone Number
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="fw-bold">
-                Email
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="fw-bold">
-                Address
-            </div>
-        </div>
-
-    </div>
-    
-    <div class="row ms-2 mt-3">
-        <div class="col text-primary">
-            <div class="name">Mohamed Ali Aden</div>
-        </div>
-
-        <div class="col">
-            <div class="gender">Male</div>
-        </div>
-
-        <div class="col">
-            <div class="phone-number">254712345678</div>
-        </div>
-
-        <div class="col">
-            <div class="email">mohamedali@kasoko.com</div>
-        </div>
-
-        <div class="col">
-            <div class="address">Eastleigh</div>
-        </div>
-    </div>
-   </section>
-
-   <section id="notes-section">
+   <footer class="page-footer bg-white font-small fixed-bottom" id="footer">
+    <div class="container">
     <div class="row">
-        <div class="col ms-2 mt-2">
-            <h1 class="fs-4 fw-bold">Check IN</h1>
+        <div class="col">
+        <p class="fw-bold mt-3">2022&copy;BiasharaSystem</p>
         </div>
 
-        <div class="col d-flex flex-row-reverse mx-2 mt-2">
-            <button class="btn btn-outline-primary">
-            <i class="bi bi-check"></i>
-            Mark As Completed
-            </button>
+        <div class="col d-flex flex-row-reverse">
+            <p class="fw-bold mt-3">Contact Us</p>
         </div>
     </div>
-
-    <hr class="clear-fix w-100">
-
-    <div class="row">
-        <div class="col ms-2 mt-2">
-            <h1 class="fs-4 fw-bold">
-                <i class="bi bi-chat"></i>
-                Notes</h1>
-        </div>
-
-        <div class="col d-flex flex-row-reverse mx-2 mt-2">
-            <button class="btn btn-outline-primary" id="add-notes">
-            <i class="bi bi-plus"></i>
-            Add Notes
-            </button>
-        </div>
     </div>
-
-    <hr class="clear-fix w-100">
-
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Services Provider</th>
-            <th scope="col">Commenter</th>
-            <th scope="col">Comment</th>
-            <th scope="col">Location</th>
-            <th scope="col">Date</th>
-        </tr>
-        </thead>
-        <tbody id="comment-list"></tbody>
-    </table>
-
-    <div class="modal" id="add-comment" style="background: rgba(0, 0, 0, 0.35);">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Add Note</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <label for="serviceprovider">Service Provider</label>
-                <select class="form-control" placeholder="Select Service Provider" name="select" id="select-provider">
-                    <option value="Select Service Provider"></option>
-                    <option value="Mohammed">Mohammed</option>
-                    <option value="Ali">Ali</option>
-                    <option value="Yaceen">Yaceen</option>
-                </select>
-
-                <label for="serviceprovider">Service Location</label>
-                <select class="form-control" name="select" id="select-provider">
-                    <option value="Select Service Provider"></option>
-                    <option value="Mohammed">Mohammed</option>
-                    <option value="Ali">Ali</option>
-                    <option value="Yaceen">Yaceen</option>
-                </select>
-                
-                <label for="note">Note</label>
-                <div class="input-group">
-                    <span class="input-group-text">
-                        <i class="bi bi-chat"></i>
-                    </span>
-                    <textarea name="" id="" cols="10" rows="2" class="form-control"></textarea>
-                  </div>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-outline-primary" id="close">
-                <i class="bi bi-x-lg"></i>
-                Cancel
-              </button>
-    
-              <button class="btn btn-primary" id="check-in" >
-                <i class="bi bi-plus"></i>
-                Add
-            </button> 
-            </div>
-          </div>
-        </div>
-      </div>
-   
-
-   </section>
+   </footer>
   </body>
 </html>

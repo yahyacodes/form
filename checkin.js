@@ -7,18 +7,21 @@ const patientDropdown = document.querySelector('#patients-dropdown')
 const dropdownList = document.querySelector('#patient-list')
 const serviceDropdown = document.querySelector('#services-dropdown')
 const serviceList = document.querySelector('#service-list')
+let section = document.querySelector('#section')
+const navbarHeight = document.querySelector('#navbar').style.height
+const footerHeight = document.querySelector('#footer').style.height
 
 searchNumber.onclick = function () {
     modal.style.display = 'block'
   }
 
-// closeModal.onclick = function () {
-//     modal.style.display = 'none'
-//   }
+closeModal.onclick = function () {
+    modal.style.display = 'none'
+  }
 
-  // cancelModal.onclick = function () {
-  //   modal.style.display = 'none'
-  //   }
+  cancelModal.onclick = function () {
+    modal.style.display = 'none'
+    }
 
     window.onclick = function (event) {
         if(event.target === modal){
@@ -36,3 +39,12 @@ searchNumber.onclick = function () {
       serviceDropdown.onclick = function () {
         serviceList.style.display = 'block'
         }
+
+        function getDimensions() {
+          const sectionHeight = window.innerHeight - (footerHeight + navbarHeight) - 130
+          section.style.height = sectionHeight + 'px'
+        }
+
+        window.addEventListener('resize', getDimensions)
+
+        getDimensions()
