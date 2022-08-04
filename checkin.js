@@ -43,6 +43,7 @@ closeModal.onclick = function () {
         function getDimensions() {
           const sectionHeight = window.innerHeight - (footerHeight + navbarHeight) - 130
           section.style.height = sectionHeight + 'px'
+          console.log(sectionHeight);
         }
 
         window.addEventListener('resize', getDimensions)

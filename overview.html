@@ -51,7 +51,7 @@
         Appointments
     </button>
 
-    <button class="btn btn-light border-end">
+    <button class="btn btn-light border-end" onclick="location.href='checkin.html'">
         <i class="bi bi-person-fill"></i>
         Check INs
     </button>
@@ -95,7 +95,9 @@
     </div>
    </nav>
 
-   <section class="d-none d-sm-none d-md-none d-lg-block">
+   <section id="overview-section">
+    <div class="row">
+        <div class="col-3 col-sm-12 col-md-3">
     <div class="sidebar bg-primary rounded mt-3 ms-3 " id="sidebar" style="width: 300px; height: 510px; cursor: pointer;">
         <div class="text-center">
     <p class="fs-5 fw-normal text-light" id="name-view">Ali Mohammed Jama</p>
@@ -144,26 +146,108 @@
     </p>
 
     </div>
+        </div>
+        <div class="col-9 col-sm-12 col-md-9 bg-white rounded mt-3">
+            <div class="row">
+                <div class="col">
+                    <p class="fw-bold ms-2 mt-2">
+                        Check IN
+                    </p>
+                </div>
+                <div class="col d-flex flex-row-reverse">
+                    <button class="mt-2 mx-2 btn btn-outline-primary">
+                        <i class="bi bi-check"></i>
+                        Mark As Complete
+                    </button>
+                </div>
+            </div>
+    
+        <hr class="clear-fix w-100">
+    
+        <div class="row">
+            <div class="col" >
+                <p class="ms-2 fw-bold">
+                    <i class="bi bi-person-fill"></i>
+                    Patient
+                </p>
+            </div>
+
+            <div class="col d-flex flex-row-reverse mx-2">
+                <button class="btn btn-outline-primary fw-bold">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    Update Patient Info
+                </button>
+            </div>
+        </div>
+    
+        <hr class="clear-fix w-100">
+    
+        <table class="table table-striped mb-5">
+            <thead>
+                <tr>
+                <th scope="col" class="border-top bg-secondary bg-opacity-10">Name</th>
+                <th scope="col" class="border-top bg-secondary bg-opacity-10">Gender</th>
+                <th scope="col" class="border-top bg-secondary bg-opacity-10">Phone Number</th>
+                <th scope="col" class="border-top bg-secondary bg-opacity-10">Email</th>
+                <th scope="col" class="border-top bg-secondary bg-opacity-10">Address</th>
+                </tr>
+    
+                <tr>
+                    <td class="text-primary" style="cursor: pointer;">Mohammed Ali Jama</td>
+                    <td>Male</td>
+                    <td>254712345678</td>
+                    <td>mohamedAliJama@kasoko.com</td>
+                    <td>Eastleigh</td>
+                </tr>
+            </thead>
+            <tbody id="patient-info"></tbody>
+        </table>
+        
+        <hr class="clear-fix w-100">
+
+
+        <div class="row">
+            <div class="col">
+
+                <p class="fw-bold ms-2">Group</p>
+            </div>
+            <div class="col d-flex flex-row-reverse mx-2">
+
+                <button class="btn btn-outline-primary mx-2 fw-bold">
+                    <i class="bi bi-plus"></i>
+                    Add To Group
+                </button>
+            </div>
+        </div>
+        </div>
+            </div>
    </section>
 
-   <section class="bg-white mt-2 ms-4 rounded" style="position: absolute; width: 1550px; left: 20rem;height: 510px; top: 4rem;" id="overview-section">
-    <div class="row">
-        <div class="col">
-            <p class="fs-5 fw-bold ms-2 mt-2">
+    <div class="modal" id="check-number" style="background: rgba(0, 0, 0, 0.35);">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Check In</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="fw-bold">Phone Number</p>
+              <input type="search" id="search" class="form-control" placeholder="254712345678">
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline-primary" id="close">
+                <i class="bi bi-x-lg"></i>
+                Cancel
+              </button>
+    
+              <button class="btn btn-primary" id="check-in" >
                 <i class="bi bi-person-fill"></i>
-                Patient
-            </p>
+                Check In
+            </button> 
+            </div>
+          </div>
         </div>
-        <div class="col d-flex flex-row-reverse">
-            <button class=" mx-2 mt-3 btn btn-outline-primary">
-                <i class="bi bi-check"></i>
-                Mark As Complete
-            </button>
-        </div>
-    </div>
-
-    <hr class="clear-fix w-100">
-</section>
+      </div>
 
 
    <footer class="page-footer bg-white font-small fixed-bottom" id="footer">
